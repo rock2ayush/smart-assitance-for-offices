@@ -20,3 +20,9 @@ def speak(audio):
     engine.say(audio)
     engine.runAndWait()
 
+root.configure(background="cyan")
+Button(text="Close",command=root.destroy).pack(fill=X)
+
+
+
+def click(event):
