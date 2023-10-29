@@ -259,3 +259,44 @@ def click(event):
                        scvalue.set(o)
                        screen.update()
                        speak(o)
+elif('hcf' in str2 or 'gcd' in str2):
+                  p=str(HCF())
+                  print(p)
+                  scvalue.set(p)
+                  screen.update()
+                  speak(p)
+            elif('lcm' in str2):
+                q=str(LCM())
+                print(q)
+                scvalue.set(q)
+                screen.update()
+                speak(q)
+            elif('fibon' in str2):
+                # list[0]
+                FIBONACCI()
+                print('')
+            elif('fact' in str2):
+                 list[0]
+                 f=str(FACTORIAL())
+                 print(f)
+                 scvalue.set(f)
+                 screen.update()
+                 speak(f)
+
+            elif('boss' in str2):
+                print('my boss name is Anand kumar verma')
+                scvalue.set("Anand kumar verma")
+                screen.update()
+                speak('my boss name is Anand kumar verma')
+
+            elif "open youtube" in str2:
+                scvalue.set("You Tube ...")
+                screen.update()
+                webbrowser.open("youtube.com")
+                break
+                
+            else:
+                print("Please say again") 
+                scvalue.set("Please say again")
+                screen.update()
+                speak("Please say again")
