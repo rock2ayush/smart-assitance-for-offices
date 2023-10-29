@@ -20,13 +20,14 @@ def speak(audio):
     engine.say(audio)
     engine.runAndWait()
 
+
 root.configure(background="cyan")
 Button(text="Close",command=root.destroy).pack(fill=X)
 
 
 
-
 def click(event):
+
     global scvalue
     text=event.widget.cget("text")
     print(text)
@@ -72,7 +73,7 @@ def click(event):
                 temp=temp+list[x]
             return(temp)
 
- def mul():
+        def mul():
            mu=1
            for x in range(len(list)):
                 mu=mu*list[x]
@@ -259,7 +260,8 @@ def click(event):
                        scvalue.set(o)
                        screen.update()
                        speak(o)
-elif('hcf' in str2 or 'gcd' in str2):
+
+            elif('hcf' in str2 or 'gcd' in str2):
                   p=str(HCF())
                   print(p)
                   scvalue.set(p)
@@ -300,3 +302,93 @@ elif('hcf' in str2 or 'gcd' in str2):
                 scvalue.set("Please say again")
                 screen.update()
                 speak("Please say again")
+
+
+     # elif text=="Speak here !":
+     #     screen.set("")
+     #     screen.update()
+     
+    else:
+        scvalue.set(scvalue.get()+text)
+        screen.update()
+
+scvalue= StringVar()
+scvalue.set("")
+
+screen=Entry(root, borderwidth=10,textvar=scvalue,font="lucide 40 bold")
+screen.pack(fill=X,ipadx=8,pady=10,padx=10)
+
+f=Frame(root,bg="RED")
+# b=Button(f,text="Speak here !",padx=29,pady=12,font="lucida 10 bold")
+# b.pack(side=LEFT)
+# b.bind("<Button-1>",click)
+b=Button(f,text="Speak here !",padx=17,pady=10,font="lucida 10 bold")
+b.pack(side=LEFT)
+b.bind("<Button-1>",click)
+b=Button(f,text="Notepad",padx=30,pady=10,font="lucida 10 bold")
+b.pack(side=LEFT)
+b.bind("<Button-1>",click)
+b=Button(f,text="Date",padx=42,pady=10,font="lucida 10 bold")
+b.pack(side=LEFT)
+b.bind("<Button-1>",click)
+b=Button(f,text="Time",padx=36,pady=10,font="lucida 10 bold")
+b.pack(side=LEFT)
+b.bind("<Button-1>",click)
+
+f.pack()
+
+
+f=Frame(root,bg="RED")
+for i in range(7,10):
+    
+    b=Button(f,text=str(i),padx=28,pady=12,font="lucida 35 bold")
+    b.pack(side=LEFT) 
+    b.bind("<Button-1>",click)
+b=Button(f,text="/",padx=29,pady=12,font="lucida 35 bold")
+b.pack(side=LEFT)
+b.bind("<Button-1>",click)
+f.pack()
+
+
+f=Frame(root,bg="pink")
+for i in range(4,7):  
+    b=Button(f,text=str(i),padx=28,pady=12,font="lucida 35 bold")
+    b.pack(side=LEFT)
+    b.bind("<Button-1>",click)
+b=Button(f,text="%",padx=14,pady=12,font="lucida 35 bold")
+b.pack(side=LEFT)
+b.bind("<Button-1>",click)
+f.pack()
+
+f=Frame(root,bg="green")
+
+for i in range (1,4):
+    b=Button(f,text=str(i),padx=28,pady=12,font="lucida 35 bold")
+    b.pack(side=LEFT)
+    b.bind("<Button-1>",click)
+b=Button(f,text="+",padx=22,pady=12,font="lucida 35 bold")
+b.pack(side=LEFT)
+b.bind("<Button-1>",click)
+f.pack()
+
+f=Frame(root,bg="black")
+b=Button(f,text="0",padx=27,pady=12,font="lucida 35 bold")
+b.pack(side=LEFT)
+b.bind("<Button-1>",click)
+b=Button(f,text=".",padx=34,pady=12,font="lucida 35 bold")
+b.pack(side=LEFT)
+b.bind("<Button-1>",click)
+b=Button(f,text="*",padx=32,pady=12,font="lucida 35 bold")
+b.pack(side=LEFT)
+b.bind("<Button-1>",click)
+b=Button(f,text="=",padx=24,pady=12,font="lucida 35 bold")
+b.pack(side=LEFT)
+b.bind("<Button-1>",click)
+
+f.pack()
+
+f=Frame(root,bg="grey")
+f.pack()
+
+
+root.mainloop()
